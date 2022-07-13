@@ -26,39 +26,53 @@
     <header>
       <h1>Weather Dashboard</h1>
     </header>
-
+    <!-- $(function getWeather("Austin")) {
+         var lat = 30.267153,
+             lng = -97.743057;
+			 } -->
     <div class="container">
       <div class="left">
         <h2>
-          Search for a City: 
-        </h2> 
-        <div class="row">          
-			<form id="search-form">
-				<input class="col-3" id="search-input" type="text" placeholder="Detroit"> 
-				<div class="d-grid col-3 mx-auto">
-				</div>
-			</form>    
+          Search for a City:
+        </h2>
+        <div class="row">
+          <form id="search-form">
+            <input
+              class="col-3"
+              id="search-input"
+              type="text"
+              placeholder="Detroit"
+            />
+            <div class="d-grid col-3 mx-auto"></div>
+          </form>
         </div>
-	  <button class="searchBtn">
+        <button class="searchBtn">
           Search
-      </button>
-	
-      <div class="column-item">Austin</div>
-      <div class="column-item">Charlotte</div>
-      <div class="column-item">New York</div>
-      <div class="column-item">Orlando</div>
-      <div class="column-item">Houston</div>
-      <div class="column-item">Chicago</div>
-	 </div>
+        </button>
+
+        <div class="column-item">
+          <button class="cityBtn" onclick="getWeather(Austin)"></button>
+        </div>
+        <script>
+          //   function getWeather(Austin) {
+          //     https://api.weather.gov/points/&varLat/&varLng/forecast';
+          //   }
+          //
+        </script>
+        <div class="column-item">Charlotte</div>
+        <div class="column-item">New York</div>
+        <div class="column-item">Orlando</div>
+        <div class="column-item">Houston</div>
+        <div class="column-item">Chicago</div>
+      </div>
     </div>
-	<div class="row"
-		<div class="right">
-		
-		<div class="weather">Placeholder for weather API</div>
-		</div>
-	</div>
+    <div class="row">
+      <div class="right">
+        <div class="weather">Placeholder for weather API</div>
+      </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://api.weather.gov/></script>
+    <script src="https://api.weather.gov"></script>
   </body>
 </html>

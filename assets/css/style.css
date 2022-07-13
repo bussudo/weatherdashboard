@@ -46,6 +46,15 @@ header{
     margin: 10px;
 }
 
+#Austin{
+	background-color: var(--mdgray);
+    color: var(--white);
+    width: 250px;
+    padding: 10px;
+    font-family: 'Arial', cursive;
+    border-radius: 10px;
+   margin: 10px; 
+}
 .container {
 	display: flex;
 	flex-wrap: wrap;
