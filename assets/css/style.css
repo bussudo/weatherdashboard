@@ -1,14 +1,14 @@
 :root {
     --darkblue: rgb(25, 64, 255);
     --mdblue: rgb(0, 128, 255);
-    --mdgray: rgb(200,200,200);
+    --mdgray: rgb(200, 200, 200);
     --white: white;
     --black: black;
 }
 
-header{
+header {
     background-color: var(--darkblue);
-    color:var(--white);
+    color: var(--white);
     text-align: center;
     font-family: Arial;
     padding: 10px;
@@ -16,90 +16,118 @@ header{
     border-bottom-right-radius: 10px;
 }
 
-.searchBtn{
+.searchBtn {
     background-color: var(--mdblue);
     color: var(--white);
     width: 250px;
+    height: 50px;
     padding: 10px;
     font-family: 'Arial', cursive;
     border-radius: 10px;
-   margin: 10px; 
+    margin: 10px;
 }
 
-.right {
-    display:flex;
-    margin: 5px 0;
-    justify-content: space-between;
-}
-
-.center { 
+.center {
     font-family: Arial;
-    font-size:x-large;
+    font-size: x-large;
     border-radius: 15px;
     border-color: var(--mdblue);
 }
 
-#search-input{
+#search-input {
     padding: 5px;
-	width:  250px;
+    width: 250px;
     font-family: Comfortaa;
     margin: 10px;
 }
 
-#Austin{
-	background-color: var(--mdgray);
+#Austin {
+    background-color: var(--mdgray);
     color: var(--white);
     width: 250px;
     padding: 10px;
     font-family: 'Arial', cursive;
     border-radius: 10px;
-   margin: 10px; 
+    margin: 10px;
 }
 .container {
-	display: flex;
-	flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .weather {
-    width: 75%;
-    height: 200px;
-	margin-left: 400px;
-	justify: right;
-	border: dashed;
-	border-color: black;
+    width: 925px;
+    height: 325px;
+    border: dashed;
+    margin-top: 25px;
+    border-color: black;
 }
 
+.cityName {
+    font-size: 50 px;
+}
+
+.date {
+    font-size: 20px;
+}
+
+.row {
+    justify-content: center;
+}
 .flex-column {
     display: flex;
     flex-wrap: wrap;
-  }
-  
-  .column-item {
-    flex: 1 0 25%;  /* flex-grow, flex-shrink, flex-basis */
+}
+
+.column-item {
+    flex: 1 0 25%; /* flex-grow, flex-shrink, flex-basis */
     margin: 5px;
     padding: 5px;
     border-radius: 10px;
     background-color: var(--mdgray);
-  }
-  
-h4{
+}
+
+h4 {
     font-family: 'Arial', cursive;
     color: white;
     background-color: var(--darkblue);
     border-radius: 10px;
-    display: flex; 
+    display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: -20px;    
+    margin-top: -20px;
 }
  
-p{
+p {
     background-color: var(--mdgray);
     font-size: small;
     font-family: Comfortaa;
     margin: 2px;
     padding: 5px;
     border-radius: 10px;
-    border: 2px dashed var(--white);
+    border: 2px var(--white);
     font-weight: bold;
+}
+.outerContainer {
+    display: flex;
+}
+.container {
+    width: max-content;
+    margin: 5px;
+}
+
+.forecastWeatherDivision {
+    /* border: 3px solid; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+}
+.forecastWeatherContainer {
+    height: 30vh;
+    width: 150vh;
+}
+.foreCard {
+    background-color: (white);
+    border-radius: 20px;
 }

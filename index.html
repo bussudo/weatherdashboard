@@ -26,53 +26,153 @@
     <header>
       <h1>Weather Dashboard</h1>
     </header>
-    <!-- $(function getWeather("Austin")) {
-         var lat = 30.267153,
-             lng = -97.743057;
-			 } -->
-    <div class="container">
-      <div class="left">
-        <h2>
-          Search for a City:
-        </h2>
-        <div class="row">
-          <form id="search-form">
-            <input
-              class="col-3"
-              id="search-input"
-              type="text"
-              placeholder="Detroit"
-            />
-            <div class="d-grid col-3 mx-auto"></div>
+    <div class="outerContainer">
+      <div class="container">
+        <div class="left">
+          <h2>
+            Search for a City:
+          </h2>
+          <div class="row">
+              <div class="d-grid col-3 mx-auto"></div>
+            </form>
+          </div>
+          <button class="searchBtn"><form id="form"> 
+            <input type="search" id="query" name="q" placeholder="Enter city to search for...">
+            <button class="searchBtn" onclick="city(event)">Search</button>
           </form>
-        </div>
-        <button class="searchBtn">
-          Search
-        </button>
 
-        <div class="column-item">
-          <button class="cityBtn" onclick="getWeather(Austin)"></button>
+          <div class="column-item">
+            <button class="cityBtn" onclick="getWeather(Austin)"></button>
+          </div>
+          <div class="column-item">Charlotte</div>
+          <div class="column-item">New York</div>
+          <div class="column-item">Orlando</div>
+          <div class="column-item">Houston</div>
+          <div class="column-item">Chicago</div>
         </div>
-        <script>
-          //   function getWeather(Austin) {
-          //     https://api.weather.gov/points/&varLat/&varLng/forecast';
-          //   }
-          //
-        </script>
-        <div class="column-item">Charlotte</div>
-        <div class="column-item">New York</div>
-        <div class="column-item">Orlando</div>
-        <div class="column-item">Houston</div>
-        <div class="column-item">Chicago</div>
+      </div>
+
+      <div class="currentWeather">
+        <h1 class="cityName row">city</h1>
+        <h2 class="date row">Date</h2>
       </div>
     </div>
-    <div class="row">
-      <div class="right">
-        <div class="weather">Placeholder for weather API</div>
-      </div>
-    </div>
+    <div class="forecastWeatherDivision">
+        
+      <div class="forecastWeatherContainer">
+
+        <div class="forecastWeatherCard row">
+
+          <div class="Day1 col foreCard" style="margin-right: 5px;">
+
+            <p class="row Day1">Date</p>
+            <div class="row">
+              <p class="col 1temperature temp" style="padding: 0">Temp</p>
+              <div class="col" style="padding: 0">
+                <img src="" class="icon Oneicon" style="padding: 0"; />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col" style="padding: 0">
+                <p class="1wind">Wind Speed:</p>
+                <p class="1humidity">Humidity:</p>
+              </div>
+              <div class="col" style="padding: 0">
+                <p class="1windV">50mph</p>
+                <p class="1humidityV">80%</p>
+              </div>
+            </div>
+          
+          </div>
+
+          <div class="Day2 col foreCard" style="margin-right: 5px;">
+
+            <p class="row day2">Date</p>
+            <div class="row">
+              <p class="col 2temperature temp" style="padding: 0">Temp</p>
+              <div class="col" style="padding: 0">
+                <img src="" class="icon Twoicon" style="padding: 0"; />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col" style="padding: 0">
+                <p class="2wind">Wind Speed:</p>
+                <p class="2humidity">Humidity:</p>
+              </div>
+              <div class="col" style="padding: 0">
+                <p class="2windV">50mph</p>
+                <p class="2humidityV">80%</p>
+              </div>
+            </div>
+            
+          </div>
+
+          <div class="Day3 col foreCard" style="margin-right: 5px;">
+            
+            <p class="row day3">Date</p>
+            <div class="row">
+              <p class="col 3temperature temp" style="padding: 0">Temp</p>
+              <div class="col" style="padding: 0">
+                <img src="" class="icon Threeicon" style="padding: 0"; />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col" style="padding: 0">
+                <p class="3wind">Wind Speed:</p>
+                <p class="3humidity">Humidity:</p>
+              </div>
+              <div class="col" style="padding: 0">
+                <p class="3windV">50mph</p>
+                <p class="3humidityV">80%</p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="Day4 col foreCard" style="margin-right: 5px;">
+            
+            <p class="row 4day">Date</p>
+            <div class="row">
+              <p class="col 4temperature temp" style="padding: 0">Temp</p>
+              <div class="col" style="padding: 0">
+                <img src="" class="icon Fouricon" style="padding: 0"; />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col" style="padding: 0">
+                <p class="4wind">Wind Speed:</p>
+                <p class="4humidity">Humidity:</p>
+              </div>
+              <div class="col" style="padding: 0">
+                <p class="4windV">50mph</p>
+                <p class="4humidityV">80%</p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="Day5 col foreCard">
+            
+            <p class="row 5day">Date</p>
+            <div class="row">
+              <p class="col 5temperature temp" style="padding: 0">Temp</p>
+              <div class="col" style="padding: 0">
+                <img src="" class="icon Fiveicon" style="padding: 0"; />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col" style="padding: 0">
+                <p class="5wind">Wind Speed:</p>
+                <p class="5humidity">Humidity:</p>
+              </div>
+              <div class="col" style="padding: 0">
+                <p class="5windV">50mph</p>
+                <p class="5humidityV">80%</p>
+              </div>
+            </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://api.weather.gov"></script>
+    <script src=https://openweathermap.org/api/one-call-api></script>
   </body>
 </html>

@@ -1,31 +1,48 @@
-var usersContainer = document.getElementById('users');
-var fetchButton = document.getElementById('fetch-button');
+let weather;
+let city;
+let st;
+let appid;
+
+appid = "d108e2cfc3dc7b43eb551b30afdf1f82";
 
 function getApi() {
-	var requestUrl = 'https://api.weather.gov/points/&varLat/&varLng/forecast'
-//  var requestUrl = 'https://api.github.com/users?per_page=5';
-
-  fetch(requestUrl)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      //Using console.log to examine the data
-      console.log(data);
-      for (var i = 0; i < data.length; i++) {
-        //Creating a h3 element and a p element
-        var temp = document.createElement('p');
-        var lng = document.createElement('p');
-
-        //Setting the text of the h3 element and p element.
-        userName.textContent = data[i].login;
-        userUrl.textContent = data[i].url;
-
-        //Appending the dynamically generated html to the div associated with the id="users"
-        //Append will attach the element as the bottom most child.
-        usersContainer.append(userName);
-        usersContainer.append(userUrl);
-      }
-    });
+  var requestUrl = "https://openweathermap.org/api/one-call-api";
 }
-fetchButton.addEventListener('click', getApi);
+
+getCity();
+
+$(q).click(function (event) {
+  city = $(search - input).val();
+  alldata(event);
+});
+
+// function alldata(event) {
+
+// }
+
+fetch(
+  requestUrl +
+    `https://api.openweathermap.org/geo/1.0/direct?q="${city},${st},"US"=&appid=${appid}&units=imperial`
+      .then(function () {
+        return response.json();
+      })
+      .then(function (data) {
+        let myarray = data.daily;
+        myarray.unshift(data.current);
+        return myarray;
+      })
+      .then(function (data) {
+        //Using console.log to examine the data
+        console.log(data);
+        for (var i = 0; i < data.length; i++) {
+          console.log(data[i]);
+          // lon = data.coord.lon;
+          // lat = data.coord.lat;
+
+          var temp = document.createElement(current.temp.daily);
+        }
+      })
+      .catch((err) => {
+        console.log();
+      })
+);
