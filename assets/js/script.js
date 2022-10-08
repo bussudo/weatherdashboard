@@ -18,6 +18,7 @@ function curDate() {
     today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
 }
 
+let dateTest = (getElementById("curDate").innerHTML = "data data");
 // $(q).click(function (event) {
 //   city = $(search - input).val();
 //   alldata(event);
