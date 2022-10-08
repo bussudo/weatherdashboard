@@ -9,16 +9,22 @@ function getApi() {
   var requestUrl = "https://openweathermap.org/api/one-call-api";
 }
 
-getCity();
+// getCity();
+// get current date
 
-$(q).click(function (event) {
-  city = $(search - input).val();
-  alldata(event);
-});
+function curDate() {
+  var today = new Date();
+  var date =
+    today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
+}
 
-// function alldata(event) {
+// $(q).click(function (event) {
+//   city = $(search - input).val();
+//   alldata(event);
+// });
 
-// }
+document.getElementById("curDate").innerHTML = Date();
+document.getElementById("curCity").addEventListener("click", getCity);
 
 fetch(
   requestUrl +
@@ -38,6 +44,16 @@ fetch(
           console.log(data[i]);
           // lon = data.coord.lon;
           // lat = data.coord.lat;
+
+          // $(".curDate").text(
+          //   new Date(data.dt * 1000).toLocaleDateString("en-US", {
+          //     weekday: "long",
+          //   }) +
+          //     ", " +
+          //     new Date(data.dt * 1000).toLocaleDateString("en-US", {
+          //       day: "numeric",
+          //     })
+          // );
 
           var temp = document.createElement(current.temp.daily);
         }

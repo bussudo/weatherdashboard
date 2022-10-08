@@ -38,9 +38,8 @@
           </div>
           <button class="searchBtn"><form id="form"> 
             <input type="search" id="query" name="q" placeholder="Enter city to search for...">
-            <button class="searchBtn" onclick="city(event)">Search</button>
+            <button class="searchBtn" onclick="city(getCity)">Search</button>
           </form>
-
           <div class="column-item">
             <button class="cityBtn" onclick="getWeather(Austin)"></button>
           </div>
@@ -50,11 +49,15 @@
           <div class="column-item">Houston</div>
           <div class="column-item">Chicago</div>
         </div>
-      </div>
+      </div>   
+        </div>
+        <section>
+        <div class="row" class="curWeather">
 
-      <div class="currentWeather">
-        <h1 class="cityName row">city</h1>
-        <h2 class="date row">Date</h2>
+        <h1 class="curCity row">City</h1>
+        <h2><div id="curDate"></h2></div>
+          </section>
+        </div>
       </div>
     </div>
     <div class="forecastWeatherDivision">
@@ -173,6 +176,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src=https://openweathermap.org/api/one-call-api></script>
+    <script src="https://openweathermap.org/api/one-call-api"></script>
+    <script src="script.js"></script>
   </body>
 </html>

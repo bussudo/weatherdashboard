@@ -55,7 +55,7 @@ header {
     flex-wrap: wrap;
 }
 
-.weather {
+.curWeather {
     width: 925px;
     height: 325px;
     border: dashed;
