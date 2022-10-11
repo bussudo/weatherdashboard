@@ -32,13 +32,13 @@
           <h2>
             Search for a City:
           </h2>
-          <div class="row">
+          <div class="row" class="cityContainer">
               <div class="d-grid col-3 mx-auto"></div>
             </form>
           </div>
           <button class="searchBtn"><form id="form"> 
             <input type="search" id="query" name="q" placeholder="Enter city to search for...">
-            <button class="searchBtn" onclick="city(getCity)">Search</button>
+            <button class="searchBtn" id="btn">Search</button>
           </form>
           <div class="column-item">
             <button class="cityBtn" onclick="getWeather(Austin)"></button>
@@ -49,15 +49,15 @@
           <div class="column-item">Houston</div>
           <div class="column-item">Chicago</div>
         </div>
-      </div>   
+      </div>  
+      <section>
+        <div class="curWeather row">
+          <img src="/assets/img/weather.png">
+        <h1 class="curCity"><div id="city">${city}</div></h1>
+        <h2 class="curDate"><div id="curDate">${curDate}</div></h2>
+        <h2 class="temp"><div id="temp">${temp}</div></h2>
+          </section> 
         </div>
-        <section>
-        <div class="row" class="curWeather">
-
-        <h1 class="curCity row">City</h1>
-        <h2><div id="curDate">${curDate}</h2></div>
-        <div>${dateTest}</div>
-          </section>
         </div>
       </div>
     </div>
@@ -67,9 +67,9 @@
 
         <div class="forecastWeatherCard row">
 
-          <div class="Day1 col foreCard" style="margin-right: 5px;">
+          <div class="tomorrow col foreCard" style="margin-right: 5px;">
 
-            <p class="row Day1">Date</p>
+            <p class="row tomorrow">${tomorrow}</p>
             <div class="row">
               <p class="col 1temperature temp" style="padding: 0">Temp</p>
               <div class="col" style="padding: 0">
@@ -89,9 +89,9 @@
           
           </div>
 
-          <div class="Day2 col foreCard" style="margin-right: 5px;">
+          <div class="day2 col foreCard" style="margin-right: 5px;">
 
-            <p class="row day2">Date</p>
+            <p class="row" id="day2">${day2}</p>
             <div class="row">
               <p class="col 2temperature temp" style="padding: 0">Temp</p>
               <div class="col" style="padding: 0">
@@ -111,9 +111,9 @@
             
           </div>
 
-          <div class="Day3 col foreCard" style="margin-right: 5px;">
+          <div class="day3 col foreCard" style="margin-right: 5px;">
             
-            <p class="row day3">Date</p>
+            <p class="row" id="day3">{day3}</p>
             <div class="row">
               <p class="col 3temperature temp" style="padding: 0">Temp</p>
               <div class="col" style="padding: 0">
@@ -133,9 +133,9 @@
 
           </div>
 
-          <div class="Day4 col foreCard" style="margin-right: 5px;">
+          <div class="day4 col foreCard" style="margin-right: 5px;">
             
-            <p class="row 4day">Date</p>
+            <p class="row" id="day4">{day4}</p>
             <div class="row">
               <p class="col 4temperature temp" style="padding: 0">Temp</p>
               <div class="col" style="padding: 0">
@@ -155,9 +155,9 @@
 
           </div>
 
-          <div class="Day5 col foreCard">
+          <div class="day5 col foreCard">
             
-            <p class="row 5day">Date</p>
+            <p class="row" id="day5">{day5}</p>
             <div class="row">
               <p class="col 5temperature temp" style="padding: 0">Temp</p>
               <div class="col" style="padding: 0">

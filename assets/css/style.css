@@ -61,10 +61,13 @@ header {
     border: dashed;
     margin-top: 25px;
     border-color: black;
+   background-image: url('./assets/img/weatherpng');
+   background-repeat: no-repeat;
+   background-size: cover;
 }
 
-.cityName {
-    font-size: 50 px;
+.city {
+    font-size:50px;
 }
 
 .date {
@@ -72,6 +75,7 @@ header {
 }
 
 .row {
+    display: flex;
     justify-content: center;
 }
 .flex-column {
