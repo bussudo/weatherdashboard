@@ -16,6 +16,7 @@ function city(e) {
   console.log("hello");
   let cityEl = document.getElementById("query");
   console.log(cityEl.value);
+  city = cityEl.value;
 }
 // get current date
 

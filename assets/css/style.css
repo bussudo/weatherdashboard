@@ -61,7 +61,7 @@ header {
     border: dashed;
     margin-top: 25px;
     border-color: black;
-   background-image: url('./assets/img/weatherpng');
+   background-image: url('./img/weather.png');
    background-repeat: no-repeat;
    background-size: cover;
 }
