@@ -16,7 +16,7 @@ function city(e) {
   console.log("hello");
   let cityEl = document.getElementById("query");
   console.log(cityEl.value);
-  city = cityEl.value;
+  // city = cityEl.value;
 }
 // get current date
 
@@ -45,6 +45,7 @@ function curDate() {
 // });
 
 document.getElementById("curDate").innerHTML = Date();
+
 // document.getElementById("tomorrow").innerHTML = Date();
 // document.getElementById("day2").innerHTML = Date();
 // document.getElementById("day3").innerHTML = Date();
@@ -75,7 +76,7 @@ fetch(
       lon = data.coord.lon;
       lat = data.coord.lat;
 
-      $(".curDate").text(
+      $("curDate").text(
         new Date(data.dt * 1000).toLocaleDateString("en-US", {
           weekday: "long",
         }) +
