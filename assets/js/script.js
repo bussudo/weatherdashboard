@@ -4,6 +4,7 @@ let lon;
 let q;
 let appid;
 let startBtnEl = document.getElementById("btn");
+let current;
 
 appid = "d108e2cfc3dc7b43eb551b30afdf1f82";
 
@@ -13,38 +14,10 @@ function getApi() {
 
 function city(e) {
   e.preventDefault();
-  console.log("hello");
   let cityEl = document.getElementById("query");
-  console.log(cityEl.value);
-  // city = cityEl.value;
+  getWeather(cityEl.value);
+  document.getElementById("city").innerHTML = cityEl.value;
 }
-// get current date
-
-// function curDate() {
-//   var today = new Date();
-//   var date =
-//     today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
-// }
-
-// $(".curDate").text(
-function curDate() {
-  var today = new Date();
-
-  new Date(data.dt * 1000).toLocaleDateString("en-US", {
-    weekday: "long",
-  }) +
-    ", " +
-    new Date(data.dt * 1000).toLocaleDateString("en-US", {
-      day: "numeric",
-    });
-}
-
-// $(q).click(function (event) {
-//   city = $(search - input).val();
-//   alldata(event);
-// });
-
-document.getElementById("curDate").innerHTML = Date();
 
 // document.getElementById("tomorrow").innerHTML = Date();
 // document.getElementById("day2").innerHTML = Date();
@@ -55,57 +28,53 @@ document.getElementById("curDate").innerHTML = Date();
 document.querySelector(".curWeather").style.backgroundImage =
   "url('./assets/img/weather.png');";
 
-// document.getElementById("city").addEventListener("click", getCity);
+function getWeather(city) {
+  console.log(city);
+  fetch(
+    `http://api.openweathermap.org/geo/1.0/direct?q="${city}&appid=${appid}&units=imperial`
+  )
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log("This is my geolocation ", data);
+      getOneCallAPI(data[0].lat, data[0].lon);
+      console.log(data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
 
-fetch(
-  `https://api.openweathermap.org/geo/1.0/direct?q="${city}&appid=${appid}&units=imperial`
-)
-  .then(function () {
-    return response.json();
-  })
-  .then(function (data) {
-    let myarray = data.daily;
-    myarray.unshift(data.current);
-    return myarray;
-  })
-  .then(function (data) {
-    //Using console.log to examine the data
-    console.log(data);
-    for (var i = 0; i < data.length; i++) {
-      console.log(data[i]);
-      lon = data.coord.lon;
-      lat = data.coord.lat;
+function getOneCallAPI(lat, lon) {
+  fetch(
+    `http://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${appid}&units=imperial&exclude=hourly,minutely,alerts`
+  )
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log("this is onecall API", data);
+      document.getElementById("temp").innerHTML = data.current.temp;
+      document.getElementById("wind_speed").innerHTML = data.current.wind_speed;
+      document.getElementById("humidity").innerHTML = data.current.humidity;
+      // document.getElementById("dateValue").innerHTML = Date();
 
-      $("curDate").text(
-        new Date(data.dt * 1000).toLocaleDateString("en-US", {
-          weekday: "long",
-        }) +
-          ", " +
-          new Date(data.dt * 1000).toLocaleDateString("en-US", {
-            day: "numeric",
-          })
-      );
-
-      //var temp = document.createElement(current.temp.daily);
-      var temp = document.createElement(data.current.daily.temp);
-    }
-  })
-  .catch((err) => {
-    console.log();
-  });
-
-// Set Dates
-// const tomorrow = new Date();
-// const day2 = new Date();
-// const day3 = new Date();
-// const day4 = new Date();
-// const day5 = new Date();
-
-// tomorrow.setDate(curDate.getDate() + 1);
-// day2.setDate(today.getDate() + 2);
-// day3.setDate(today.getDate() + 3);
-// day4.setDate(today.getDate() + 4);
-// day5.setDate(today.getDate() + 5);
+      // console.log(data.current.temp);
+      // console.log(data.current.wind_speed);
+      // console.log(data.current.humidity);
+      var dateValue = moment.unix(data.current.dt).format("MM/DD/YYYY");
+      // var dateValue = moment
+      //   .unix(data.current.dt)
+      //   .toLocaleDateString("en-US", { weekday: "long" });
+      // console.log(dateValue);
+      document.getElementById("dateValue").innerHTML = dateValue;
+      // document.getElementById("dateValue").innerHTML = data.current.dt;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
 
 startBtnEl.addEventListener("click", function (e) {
   city(e);
