@@ -62,7 +62,7 @@ function getOneCallAPI(lat, lon) {
       // document.getElementById("temp").innerHTML = data.current.temp;
 
       document.getElementById("temp").innerHTML = data.current.temp;
-      varTempEl = document.createElement("h3");
+      varTempEl = document.createElement("temp");
       varTempEl.textContent = "Temp:  " & data.current.temp;
 
       document.getElementById("wind_speed").innerHTML = data.current.wind_speed;
