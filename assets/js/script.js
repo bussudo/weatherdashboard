@@ -28,6 +28,10 @@ function city(e) {
 document.querySelector(".curWeather").style.backgroundImage =
   "url('./assets/img/weather.png');";
 
+// document.getElementById("temp").innerHTML = data.current.temp;
+// varTempEl = document.createElement("h3");
+// varTempEl.textContent = "Temp:  " & data.current.temp;
+
 function getWeather(city) {
   console.log(city);
   fetch(
@@ -55,7 +59,12 @@ function getOneCallAPI(lat, lon) {
     })
     .then(function (data) {
       console.log("this is onecall API", data);
+      // document.getElementById("temp").innerHTML = data.current.temp;
+
       document.getElementById("temp").innerHTML = data.current.temp;
+      varTempEl = document.createElement("h3");
+      varTempEl.textContent = "Temp:  " & data.current.temp;
+
       document.getElementById("wind_speed").innerHTML = data.current.wind_speed;
       document.getElementById("humidity").innerHTML = data.current.humidity;
       // document.getElementById("dateValue").innerHTML = Date();
