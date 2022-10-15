@@ -134,4 +134,20 @@ p {
 .foreCard {
     background-color: (white);
     border-radius: 20px;
+    
+}
+.cardBottom {
+    border-style:solid;
+    border-width: 1px;
+    padding: 10px;
+    background-color: var(--mdgray);
+    width: 250px;
+    word-spacing: 5px;
+  }
+  
+
+#cardContainer {
+    border-style: solid;
+    background-color: whitesmoke
+    width=100%;
 }
