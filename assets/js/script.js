@@ -69,7 +69,7 @@ function getOneCallAPI(lat, lon) {
       //fields for tomorrow
 
       console.log(data.daily[1]);
-      var day1 = moment.unix(data.daily[1].dt).format("MM/DD/YYYY");
+      var date1 = moment.unix(data.daily[1].dt).format("MM/DD/YYYY");
       document.getElementById("temp1").innerHTML =
         "Temp:  " + data.daily[1].temp;
       document.getElementById("wind_speed1").innerHTML =
@@ -77,13 +77,14 @@ function getOneCallAPI(lat, lon) {
       document.getElementById("humidity1").innerHTML =
         "Humidity:  " + data.daily[1].humidity;
 
-      var day2 = moment.unix(data.daily[2].dt).format("MM/DD/YYYY");
-      document.getElementById("temp2").innerHTML =
-        "Temp:  " + data.daily[2].temp;
-      document.getElementById("wind_speed2").innerHTML =
-        "Wind Speed:  " + data.daily[2].wind_speed;
-      document.getElementById("humidity2").innerHTML =
-        "Humidity:  " + data.daily[2].humidity;
+      //Day 2 forecast
+      // var day2 = moment.unix(data.daily[2].dt).format("MM/DD/YYYY");
+      // document.getElementById("temp2").innerHTML =
+      //   "Temp:  " + data.daily[2].temp;
+      // document.getElementById("wind_speed2").innerHTML =
+      //   "Wind Speed:  " + data.daily[2].wind_speed;
+      // document.getElementById("humidity2").innerHTML =
+      //   "Humidity:  " + data.daily[2].humidity;
     })
     .catch((err) => {
       console.log(err);
