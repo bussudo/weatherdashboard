@@ -28,10 +28,6 @@ function city(e) {
 document.querySelector(".curWeather").style.backgroundImage =
   "url('./assets/img/weather.png');";
 
-// document.getElementById("temp").innerHTML = data.current.temp;
-// varTempEl = document.createElement("h3");
-// varTempEl.textContent = "Temp:  " & data.current.temp;
-
 function getWeather(city) {
   console.log(city);
   fetch(
@@ -59,31 +55,58 @@ function getOneCallAPI(lat, lon) {
     })
     .then(function (data) {
       console.log("this is onecall API", data);
-      // document.getElementById("temp").innerHTML = data.current.temp;
-
-      document.getElementById("temp").innerHTML = data.current.temp;
-      varTempEl = document.createElement("temp");
-      varTempEl.textContent = "Temp:  " & data.current.temp;
-
-      document.getElementById("wind_speed").innerHTML = data.current.wind_speed;
-      document.getElementById("humidity").innerHTML = data.current.humidity;
-      // document.getElementById("dateValue").innerHTML = Date();
-
-      // console.log(data.current.temp);
-      // console.log(data.current.wind_speed);
-      // console.log(data.current.humidity);
+      document.getElementById("temp").innerHTML = "Temp:  " + data.current.temp;
+      document.getElementById("wind_speed").innerHTML =
+        "Wind Speed:  " + data.current.wind_speed;
+      document.getElementById("humidity").innerHTML =
+        "Humidity:  " + data.current.humidity;
       var dateValue = moment.unix(data.current.dt).format("MM/DD/YYYY");
       // var dateValue = moment
       //   .unix(data.current.dt)
       //   .toLocaleDateString("en-US", { weekday: "long" });
       // console.log(dateValue);
-      document.getElementById("dateValue").innerHTML = dateValue;
-      // document.getElementById("dateValue").innerHTML = data.current.dt;
+      // document.getElementById("dateValue").innerHTML = dateValue;
+      //fields for tomorrow
+
+      console.log(data.daily[1]);
+      var day1 = moment.unix(data.daily[1].dt).format("MM/DD/YYYY");
+      document.getElementById("temp1").innerHTML =
+        "Temp:  " + data.daily[1].temp;
+      document.getElementById("wind_speed1").innerHTML =
+        "Wind Speed:  " + data.daily[1].wind_speed;
+      document.getElementById("humidity1").innerHTML =
+        "Humidity:  " + data.daily[1].humidity;
+
+      var day2 = moment.unix(data.daily[2].dt).format("MM/DD/YYYY");
+      document.getElementById("temp2").innerHTML =
+        "Temp:  " + data.daily[2].temp;
+      document.getElementById("wind_speed2").innerHTML =
+        "Wind Speed:  " + data.daily[2].wind_speed;
+      document.getElementById("humidity2").innerHTML =
+        "Humidity:  " + data.daily[2].humidity;
     })
     .catch((err) => {
       console.log(err);
     });
 }
+
+// var dateTomorrow = moment.unix(data.daily.dt).format("MM/DD/YYYY");
+// console.log(dateTomorrow);
+// Printing data to forecast day 1
+// $(".1date").text(
+//   new Date(data.daily[1].dt * 1000).toLocaleDateString("en-US", {
+//     weekday: "long",
+//   }) +
+//     ", " +
+//     new Date(data.daily[1].dt * 1000).toLocaleDateString("en-US", {
+//       day: "numeric",
+//     })
+// );
+// $(".tempTomorrow").text(Math.round(data.daily[1].temp.day));
+// document.querySelector(".Oneicon").src =
+//   "https://openweathermap.org/img/wn/" + data.daily[1].weather[0].icon + ".png";
+// $(".1windV").text(Math.round(data.daily[1].wind_speed) + "mph");
+// $(".1humidityV").text(Math.round(data.daily[1].humidity) + "%");
 
 startBtnEl.addEventListener("click", function (e) {
   city(e);
