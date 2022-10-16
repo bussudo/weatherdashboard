@@ -33,23 +33,27 @@
             Search for a City:
           </h2>
           <div class="row" class="cityContainer">
-              <div class="d-grid col-3 mx-auto"></div>
+              <div class="d-grid mx-auto"></div>
             </form>
           </div>
+          <div class="column-item">
           <button class="searchBtn"><form id="form"> 
             <input type="search" id="query" name="q" placeholder="Enter city to search for...">
             <button class="searchBtn" id="btn">Search</button>
-          </form>
+          </form></div>
           <div class="column-item">
-            <button class="cityBtn" onclick="getWeather(Austin)"></button>
+            <button class="austinBtn" id="savedCity" onclick="getOneCallCity(30.267153, -97.743057)">Austin</button>
           </div>
-          <div class="column-item">Charlotte</div>
-          <div class="column-item">New York</div>
-          <div class="column-item">Orlando</div>
-          <div class="column-item">Houston</div>
-          <div class="column-item">Chicago</div>
-        </div>
-      </div>  
+          <div class="column-item">
+            <button class="charlotteBtn" id="savedCity" onclick="getOneCallCity(35.227085, -80.843124)">Charlotte</button></div>
+          <div class="column-item">
+            <button class="nyBtn" id="savedCity" onclick="getOneCallCity(40.712776, -74.005974)">New York</button></div>
+          <div class="column-item">
+            <button class="orlandoBtn" id="savedCity" onclick="getOneCallCity(28.538336, -81.379234)">Orlando</button></div>
+          <div class="column-item">
+            <button class="chiBtn" id="savedCity" onclick="getOneCallCity(41.878113, -87.629799)">Chicago</button></div>    
+        <!-- </div>
+      </div>   -->
       <section>
         <div class="curWeather row">
         <h1 class="city"><div id=city></div></h1>

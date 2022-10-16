@@ -19,12 +19,12 @@ header {
 .searchBtn {
     background-color: var(--mdblue);
     color: var(--white);
-    width: 250px;
+    width: 225px;
     height: 50px;
     padding: 10px;
     font-family: 'Arial', cursive;
     border-radius: 10px;
-    margin: 10px;
+    margin: 7px;
 }
 
 .center {
@@ -36,19 +36,19 @@ header {
 
 #search-input {
     padding: 5px;
-    width: 250px;
+    width: 225px;
     font-family: Comfortaa;
-    margin: 10px;
+    margin: 7px;
 }
 
-#Austin {
+#savedCity {
     background-color: var(--mdgray);
     color: var(--white);
-    width: 250px;
-    padding: 10px;
+    width: 225px;
+    padding: 5px;
     font-family: 'Arial', cursive;
     border-radius: 10px;
-    margin: 10px;
+    margin: 5px;
 }
 .container {
     display: flex;
@@ -85,6 +85,7 @@ header {
 
 .column-item {
     flex: 1 0 25%; /* flex-grow, flex-shrink, flex-basis */
+    width: 250px;
     margin: 5px;
     padding: 5px;
     border-radius: 10px;
