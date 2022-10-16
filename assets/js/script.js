@@ -63,10 +63,15 @@ function getOneCallAPI(lat, lon) {
 
       //forecast data - Day 1
       console.log(data.daily[0]);
-      var date1 = moment.unix(data.daily[1].dt).format("MM/DD/YYYY");
+      var date1 = moment.unix(data.daily[0].dt).format("MM/DD/YYYY");
       document.getElementById("date1").innerHTML = date1;
+
       document.getElementById("temp1").innerHTML =
-        "Temp:  " + data.daily[1].temp;
+        "Temp:  " + data.daily[0].temp.day;
+      temp1(Math.round);
+
+      // $(".tempTomorrow").text(Math.round(data.daily[1].temp.day));
+
       document.getElementById("wind_speed1").innerHTML =
         "Wind Speed:  " + data.daily[1].wind_speed;
       document.getElementById("humidity1").innerHTML =
@@ -74,9 +79,11 @@ function getOneCallAPI(lat, lon) {
 
       //Day 2
       var date2 = moment.unix(data.daily[1].dt).format("MM/DD/YYYY");
-      document.getElementById("date1").innerHTML = date2;
+
+      document.getElementById("date2").innerHTML = date2;
       document.getElementById("temp2").innerHTML =
-        "Temp:  " + data.daily[2].temp;
+        "Temp:  " + data.daily[1].temp.day;
+
       document.getElementById("wind_speed2").innerHTML =
         "Wind Speed:  " + data.daily[2].wind_speed;
       document.getElementById("humidity2").innerHTML =
@@ -84,9 +91,9 @@ function getOneCallAPI(lat, lon) {
 
       //Day 3
       var date3 = moment.unix(data.daily[2].dt).format("MM/DD/YYYY");
-      document.getElementById("date1").innerHTML = date3;
+      document.getElementById("date3").innerHTML = date3;
       document.getElementById("temp3").innerHTML =
-        "Temp:  " + data.daily[3].temp;
+        "Temp:  " + data.daily[2].temp.day;
       document.getElementById("wind_speed3").innerHTML =
         "Wind Speed:  " + data.daily[3].wind_speed;
       document.getElementById("humidity3").innerHTML =
@@ -94,18 +101,18 @@ function getOneCallAPI(lat, lon) {
 
       //Day 4
       var date4 = moment.unix(data.daily[3].dt).format("MM/DD/YYYY");
-      document.getElementById("date1").innerHTML = date4;
+      document.getElementById("date4").innerHTML = date4;
       document.getElementById("temp4").innerHTML =
-        "Temp:  " + data.daily[4].temp;
+        "Temp:  " + data.daily[3].temp.day;
       document.getElementById("wind_speed4").innerHTML =
         "Wind Speed:  " + data.daily[4].wind_speed;
       document.getElementById("humidity4").innerHTML =
         "Humidity:  " + data.daily[4].humidity;
       //Day 5
       var date5 = moment.unix(data.daily[4].dt).format("MM/DD/YYYY");
-      document.getElementById("date1").innerHTML = date5;
+      document.getElementById("date5").innerHTML = date5;
       document.getElementById("temp5").innerHTML =
-        "Temp:  " + data.daily[5].temp;
+        "Temp:  " + data.daily[4].temp.day;
       document.getElementById("wind_speed5").innerHTML =
         "Wind Speed:  " + data.daily[5].wind_speed;
       document.getElementById("humidity5").innerHTML =
