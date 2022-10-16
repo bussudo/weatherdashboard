@@ -112,7 +112,7 @@ p {
     border: 2px var(--white);
     font-weight: bold;
 }
-.outerContainer {
+.upperContainer {
     display: flex;
 }
 .container {
@@ -120,23 +120,14 @@ p {
     margin: 5px;
 }
 
-.forecastWeatherDivision {
+.forecastContainer{
     /* border: 3px solid; */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 30vh;
 }
-.forecastWeatherContainer {
-    height: 30vh;
-    width: 150vh;
-}
 .foreCard {
-    background-color: (white);
-    border-radius: 20px;
-    
-}
-.cardBottom {
     border-style:solid;
     border-width: 1px;
     padding: 10px;
@@ -144,9 +135,9 @@ p {
     width: 250px;
     word-spacing: 5px;
   }
-  
-
-#cardContainer {
+  .forecastContainer {
+    height: 30vh;
+    width: 150vh;
     border-style: solid;
     background-color: whitesmoke
     width=100%;
