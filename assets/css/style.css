@@ -57,7 +57,8 @@ header {
 
 .curWeather {
     width: 925px;
-    height: 325px;
+    height: 400px;
+    align-content: center;
     border: dashed;
     margin-top: 25px;
     border-color: black;
