@@ -41,8 +41,10 @@
             <input type="search" id="query" name="q" placeholder="Enter city to search for...">
             <button class="searchBtn" id="btn">Search</button>
           </form></div>
+          <div class="recentSearch">
           <div class="column-item">
-            <button class="austinBtn" id="savedCity" onclick="getOneCallCity(30.267153, -97.743057)">Austin</button>
+    
+            <!-- <button class="austinBtn" id="savedCity" onclick="getOneCallCity(30.267153, -97.743057)">Austin</button>
           </div>
           <div class="column-item">
             <button class="charlotteBtn" id="savedCity" onclick="getOneCallCity(35.227085, -80.843124)">Charlotte</button></div>
@@ -51,11 +53,13 @@
           <div class="column-item">
             <button class="orlandoBtn" id="savedCity" onclick="getOneCallCity(28.538336, -81.379234)">Orlando</button></div>
           <div class="column-item">
-            <button class="chiBtn" id="savedCity" onclick="getOneCallCity(41.878113, -87.629799)">Chicago</button></div>    
-        </div>
+            <button class="chiBtn" id="savedCity" onclick="getOneCallCity(41.878113, -87.629799)">Chicago</button></div>     -->
+        <!-- </div> -->
+        <!-- </div> -->
       </div>  
-      <section>
-        <div class="curWeather row">
+      
+        <div class="curWeather column">
+          <section>
         <h1 class="city"><div id=city></div></h1>
         <h2 class="dateValue"><div id="dateValue"></div></h2>
         <h2 class="temp"><div id="temp"></div></h2>
@@ -113,130 +117,8 @@
           </section>
         
         </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script src="./assets/js/script.js"></script>
           </body>
           </html>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        <!-- <div class="forecastWeatherCard row">
-          <div class="day1 col foreCard" style="margin-right: 5px;">
-            <div id="date1"></div>
-            <div class="dateValue" id="date1"></div> -->
-              <!-- <div class="row">
-                <div id="temp1" style="padding: 0"></div>
-              <!-- <div class="col" id="temp1" style="padding: 0"></div> -->
-              <!-- <div class="col" style="padding: 0">
-                <!-- <img src="" class="icon Oneicon" style="padding: 0"; /> -->
-              <!-- </div>
-            </div>
-            <div class="row">
-              <div class="col" style="padding: 0"> -->
-                <!-- <p class="wind_speed1">Wind Speed:</p>
-                <p class="humidity1">Humidity:</p> -->
-              <!-- </div>
-              <div class="col" style="padding: 0">
-                <div id="wind_speed1">50mph</div>
-                <div id="humidity1">80%</div>
-              </div>
-            </div> -->
-          
-          <!-- </div>
 
-          <div class="day2 col foreCard" style="margin-right: 5px;">
-
-            <p class="row" id="day2">${day2}</p>
-            <div class="row">
-              <p class="col temp2" style="padding: 0">Temp</p>
-              <div class="col" style="padding: 0">
-              </div>
-            </div>
-            <div class="row">
-              <div class="col" style="padding: 0">
-                <p class="wind2">Wind Speed:</p>
-                <p class="humidity2">Humidity:</p>
-              </div>
-              <div class="col" style="padding: 0">
-                <p class="2windV">50mph</p>
-                <p class="2humidityV">80%</p>
-              </div>
-            </div>
-            
-          </div>
-
-          <div class="day3 col foreCard" style="margin-right: 5px;">
-            
-            <p class="row" id="day3">{day3}</p>
-            <div class="row">
-              <p class="col 3temperature temp" style="padding: 0">Temp</p>
-              <div class="col" style="padding: 0">
-                <img src="" class="icon Threeicon" style="padding: 0"; />
-              </div>
-            </div>
-            <div class="row">
-              <div class="col" style="padding: 0">
-                <p class="3wind">Wind Speed:</p>
-                <p class="3humidity">Humidity:</p>
-              </div>
-              <div class="col" style="padding: 0">
-                <p class="3windV">50mph</p>
-                <p class="3humidityV">80%</p>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="day4 col foreCard" style="margin-right: 5px;">
-            
-            <p class="row" id="day4">{day4}</p>
-            <div class="row">
-              <p class="col 4temperature temp" style="padding: 0">Temp</p>
-              <div class="col" style="padding: 0">
-                <img src="" class="icon Fouricon" style="padding: 0"; />
-              </div>
-            </div>
-            <div class="row">
-              <div class="col" style="padding: 0">
-                <p class="4wind">Wind Speed:</p>
-                <p class="4humidity">Humidity:</p>
-              </div>
-              <div class="col" style="padding: 0">
-                <p class="4windV">50mph</p>
-                <p class="4humidityV">80%</p>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="day5 col foreCard">
-            
-            <p class="row" id="day5">{day5}</p>
-            <div class="row">
-              <p class="col 5temperature temp" style="padding: 0">Temp</p>
-              <div class="col" style="padding: 0">
-                <img src="" class="icon Fiveicon" style="padding: 0"; />
-              </div>
-            </div>
-            <div class="row">
-              <div class="col" style="padding: 0">
-                <p class="5wind">Wind Speed:</p>
-                <p class="5humidity">Humidity:</p>
-              </div>
-              <div class="col" style="padding: 0">
-                <p class="5windV">50mph</p>
-                <p class="5humidityV">80%</p> --> --> -->
-            <!-- </div>
-          </div> -->
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="./assets/js/script.js"></script>
-  </body>
-</html>

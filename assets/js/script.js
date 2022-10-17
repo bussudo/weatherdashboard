@@ -17,6 +17,7 @@ function city(e) {
   let cityEl = document.getElementById("query");
   getWeather(cityEl.value);
   document.getElementById("city").innerHTML = cityEl.value;
+  addtoRecentSearch(cityEl.value);
 }
 
 document.querySelector(".curWeather").style.backgroundImage =
@@ -31,9 +32,9 @@ function getWeather(city) {
       return response.json();
     })
     .then(function (data) {
-      console.log("This is my geolocation ", data);
+      // console.log("This is my geolocation ", data);
       getOneCallAPI(data[0].lat, data[0].lon);
-      console.log(data);
+      // console.log(data);
     })
     .catch((err) => {
       console.log(err);
@@ -63,7 +64,7 @@ function getOneCallAPI(lat, lon) {
       document.getElementById("dateValue").innerHTML = dateValue;
 
       //forecast data - Day 1
-      console.log(data.daily[1]);
+      // console.log(data.daily[1]);
       var date1 = moment.unix(data.daily[1].dt).format("MM/DD/YYYY");
       document.getElementById("date1").innerHTML = date1;
       document.getElementById("temp1").innerHTML =
@@ -75,11 +76,9 @@ function getOneCallAPI(lat, lon) {
 
       //Day 2
       var date2 = moment.unix(data.daily[2].dt).format("MM/DD/YYYY");
-
       document.getElementById("date2").innerHTML = date2;
       document.getElementById("temp2").innerHTML =
         "Temp:  " + Math.floor(data.daily[2].temp.day);
-
       document.getElementById("wind_speed2").innerHTML =
         "Wind Speed:  " + Math.floor(data.daily[2].wind_speed);
       document.getElementById("humidity2").innerHTML =
@@ -125,6 +124,18 @@ function savedCity(e) {
   let savedCityEl = document.getElementById("savedCity");
   getWeather(savedCityEl.value);
   document.getElementById("savedCity").innerHTML = savedCityEl.value;
+}
+
+function addtoRecentSearch(cityName) {
+  let recentSearch = document.querySelector(".recentSearch");
+  var cityBtn = document.createElement("button");
+  cityBtn.classList.add("savedCity");
+  cityBtn.textContent = cityName;
+  var divElement = document.createElement("div");
+  divElement.classList.add("column-item");
+  divElement.appendChild(cityBtn);
+  recentSearch.prepend(divElement);
+  console.log(cityBtn);
 }
 
 function getOneCallCity(lat, lon) {

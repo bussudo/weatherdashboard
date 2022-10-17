@@ -41,7 +41,7 @@ header {
     margin: 7px;
 }
 
-#savedCity {
+.savedCity {
     background-color: var(--mdgray);
     color: var(--white);
     width: 225px;
@@ -56,8 +56,8 @@ header {
 }
 
 .curWeather {
-    width: 925px;
-    height: 400px;
+    width: 775px;
+    height: 350px;
     align-content: center;
     border: dashed;
     margin-top: 25px;
@@ -70,10 +70,6 @@ header {
 .city {
     font-size:50px;
 }
-
-/* .dateValue {
-    font-size: 20px;
-} */
 
 .row {
     display: flex;
