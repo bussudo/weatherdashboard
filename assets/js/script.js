@@ -7,11 +7,6 @@ let startBtnEl = document.getElementById("btn");
 let current;
 const recentSearchList = [];
 
-// var city,
-//   count = localStorage.getItem("count");
-// console.log(count);
-// var arrHistory = [];
-
 appid = "d108e2cfc3dc7b43eb551b30afdf1f82";
 
 function getApi() {
@@ -63,10 +58,6 @@ function getOneCallAPI(lat, lon) {
       document.getElementById("humidity").innerHTML =
         "Humidity:  " + data.current.humidity;
       var dateValue = moment.unix(data.current.dt).format("MM/DD/YYYY");
-      // var dateValue = moment
-      //   .unix(data.current.dt)
-      //   .toLocaleDateString("en-US", { weekday: "long" });
-      // console.log(dateValue);
       document.getElementById("dateValue").innerHTML = dateValue;
 
       //forecast data - Day 1
@@ -124,17 +115,8 @@ function getOneCallAPI(lat, lon) {
     });
 }
 
-//Weather for Saved Cities
-// function savedCity(e) {
-//   e.preventDefault();
-//   let savedCityEl = document.getElementById("savedCity");
-//   getWeather(savedCityEl.value);
-//   document.getElementById("savedCity").innerHTML = savedCityEl.value;
-// }
-
 function addtoRecentSearch(cityName) {
   let recentSearch = document.querySelector(".recentSearch");
-  // let recentSearch = document.querySelector(".recentSearch").value;
   console.log(recentSearch);
   var cityBtn = document.createElement("button");
   cityBtn.classList.add("savedCity");
