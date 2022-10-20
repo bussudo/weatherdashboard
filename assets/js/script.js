@@ -5,6 +5,12 @@ let q;
 let appid;
 let startBtnEl = document.getElementById("btn");
 let current;
+const recentSearchList = [];
+
+// var city,
+//   count = localStorage.getItem("count");
+// console.log(count);
+// var arrHistory = [];
 
 appid = "d108e2cfc3dc7b43eb551b30afdf1f82";
 
@@ -119,23 +125,46 @@ function getOneCallAPI(lat, lon) {
 }
 
 //Weather for Saved Cities
-function savedCity(e) {
-  e.preventDefault();
-  let savedCityEl = document.getElementById("savedCity");
-  getWeather(savedCityEl.value);
-  document.getElementById("savedCity").innerHTML = savedCityEl.value;
-}
+// function savedCity(e) {
+//   e.preventDefault();
+//   let savedCityEl = document.getElementById("savedCity");
+//   getWeather(savedCityEl.value);
+//   document.getElementById("savedCity").innerHTML = savedCityEl.value;
+// }
 
 function addtoRecentSearch(cityName) {
   let recentSearch = document.querySelector(".recentSearch");
+  // let recentSearch = document.querySelector(".recentSearch").value;
+  console.log(recentSearch);
   var cityBtn = document.createElement("button");
   cityBtn.classList.add("savedCity");
   cityBtn.textContent = cityName;
+  cityBtn.addEventListener("click", () => {
+    console.log("click");
+  });
   var divElement = document.createElement("div");
   divElement.classList.add("column-item");
   divElement.appendChild(cityBtn);
   recentSearch.prepend(divElement);
   console.log(cityBtn);
+  renderLastSearched(cityName);
+}
+
+const lastSearch = localStorage.getItem("city");
+function renderLastSearched(city) {
+  recentSearchList.push(city);
+  console.log(recentSearchList);
+  localStorage.setItem("searched", JSON.stringify(recentSearchList));
+}
+
+function getSearchedList(cityName) {
+  let list = JSON.parse(localStorage.getItem("searched"));
+  console.log(list);
+  for (i = 0; i < list.length; i++) {
+    addtoRecentSearch(list[i]);
+
+    console.log(list[i]);
+  }
 }
 
 function getOneCallCity(lat, lon) {
@@ -216,3 +245,5 @@ function getOneCallCity(lat, lon) {
 startBtnEl.addEventListener("click", function (e) {
   city(e);
 });
+
+getSearchedList();
