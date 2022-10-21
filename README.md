@@ -6,10 +6,10 @@ This project demonstrates automation that can be used to check the weather using
 
 ### Technologies Used
 
-HTML
-JavaScript
-CSS
-OpenWeather API
+* HTML
+* JavaScript
+* CSS
+* OpenWeather API
 
 ### Screenshot
 
