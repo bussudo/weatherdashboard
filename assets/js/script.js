@@ -17,7 +17,7 @@ function city(e) {
   e.preventDefault();
   let cityEl = document.getElementById("query");
   getWeather(cityEl.value);
-  document.getElementById("city").innerHTML = cityEl.value;
+
   addtoRecentSearch(cityEl.value);
 }
 
@@ -34,6 +34,8 @@ function getWeather(city) {
     })
     .then(function (data) {
       // console.log("This is my geolocation ", data);
+      console.log(data);
+      document.getElementById("city").innerHTML = data[0].name;
       getOneCallAPI(data[0].lat, data[0].lon);
       // console.log(data);
     })
@@ -122,7 +124,9 @@ function addtoRecentSearch(cityName) {
   cityBtn.classList.add("savedCity");
   cityBtn.textContent = cityName;
   cityBtn.addEventListener("click", () => {
-    console.log("click");
+    getWeather(cityName);
+
+    console.log(cityName);
   });
   var divElement = document.createElement("div");
   divElement.classList.add("column-item");

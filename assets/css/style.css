@@ -63,7 +63,7 @@ header {
     margin-top: 25px;
     padding: 10px;
     border-color: black;
-   background-image: url('./img/weather.png');
+   background: url('./img/weather.png');
    background-repeat: no-repeat;
    background-size: cover;
 }
